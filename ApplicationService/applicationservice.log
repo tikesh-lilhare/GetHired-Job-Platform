@@ -1,0 +1,777 @@
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v4.1.0)
+
+2026-09-17T22:04:07.427+05:30  INFO 25352 --- [ApplicationService] [           main] c.e.A.ApplicationServiceApplication      : Starting ApplicationServiceApplication v0.0.1-SNAPSHOT using Java 19 with PID 25352 (C:\Users\ADMIN\Desktop\Placement Prepration\Projects\Online Job Portal System\ApplicationService\target\ApplicationService-0.0.1-SNAPSHOT.jar started by ADMIN in C:\Users\ADMIN\Desktop\Placement Prepration\Projects\Online Job Portal System\ApplicationService)
+2026-09-17T22:04:07.431+05:30  INFO 25352 --- [ApplicationService] [           main] c.e.A.ApplicationServiceApplication      : No active profile set, falling back to 1 default profile: "default"
+2026-09-17T22:04:09.482+05:30  INFO 25352 --- [ApplicationService] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-09-17T22:04:09.975+05:30  INFO 25352 --- [ApplicationService] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 455 ms. Found 1 JPA repository interface.
+2026-09-17T22:04:10.565+05:30  INFO 25352 --- [ApplicationService] [           main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=b592edd9-7adb-384b-a0f8-daf9137147ff
+2026-09-17T22:04:11.458+05:30  INFO 25352 --- [ApplicationService] [           main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8083 (http)
+2026-09-17T22:04:11.493+05:30  INFO 25352 --- [ApplicationService] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-09-17T22:04:11.493+05:30  INFO 25352 --- [ApplicationService] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.22]
+2026-09-17T22:04:11.557+05:30  INFO 25352 --- [ApplicationService] [           main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 3985 ms
+2026-09-17T22:04:11.936+05:30  INFO 25352 --- [ApplicationService] [           main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-09-17T22:04:12.075+05:30  INFO 25352 --- [ApplicationService] [           main] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.4.1.Final
+2026-09-17T22:04:12.998+05:30  INFO 25352 --- [ApplicationService] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-09-17T22:04:13.060+05:30  INFO 25352 --- [ApplicationService] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-09-17T22:04:13.744+05:30  INFO 25352 --- [ApplicationService] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@3d3b4e09
+2026-09-17T22:04:13.749+05:30  INFO 25352 --- [ApplicationService] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-09-17T22:04:13.933+05:30  INFO 25352 --- [ApplicationService] [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://localhost:3306/application_db]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 8.0.42
+	Default catalog/schema: application_db/undefined
+	Autocommit mode: undefined/unknown
+	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-09-17T22:04:15.807+05:30  INFO 25352 --- [ApplicationService] [           main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-09-17T22:04:15.927+05:30  INFO 25352 --- [ApplicationService] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-09-17T22:04:16.090+05:30  INFO 25352 --- [ApplicationService] [           main] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-09-17T22:04:16.578+05:30  WARN 25352 --- [ApplicationService] [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-09-17T22:04:16.919+05:30  INFO 25352 --- [ApplicationService] [           main] o.s.c.openfeign.FeignClientFactoryBean   : For 'USERSERVICE' URL not provided. Will try picking an instance via load-balancing.
+2026-09-17T22:04:17.049+05:30  INFO 25352 --- [ApplicationService] [           main] o.s.c.openfeign.FeignClientFactoryBean   : For 'JOBSERVICE' URL not provided. Will try picking an instance via load-balancing.
+2026-09-17T22:04:18.118+05:30  INFO 25352 --- [ApplicationService] [           main] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestClient.
+2026-09-17T22:04:18.170+05:30  WARN 25352 --- [ApplicationService] [           main] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2026-09-17T22:04:18.214+05:30  INFO 25352 --- [ApplicationService] [           main] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2026-09-17T22:04:18.287+05:30  INFO 25352 --- [ApplicationService] [           main] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2026-09-17T22:04:18.292+05:30  INFO 25352 --- [ApplicationService] [           main] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-17T22:04:18.317+05:30  INFO 25352 --- [ApplicationService] [           main] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2026-09-17T22:04:18.319+05:30  INFO 25352 --- [ApplicationService] [           main] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2026-09-17T22:04:18.319+05:30  INFO 25352 --- [ApplicationService] [           main] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2026-09-17T22:04:18.319+05:30  INFO 25352 --- [ApplicationService] [           main] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2026-09-17T22:04:18.319+05:30  INFO 25352 --- [ApplicationService] [           main] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2026-09-17T22:04:18.319+05:30  INFO 25352 --- [ApplicationService] [           main] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2026-09-17T22:04:18.319+05:30  INFO 25352 --- [ApplicationService] [           main] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2026-09-17T22:04:19.085+05:30  INFO 25352 --- [ApplicationService] [           main] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2026-09-17T22:04:19.089+05:30  INFO 25352 --- [ApplicationService] [           main] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2026-09-17T22:04:19.094+05:30  INFO 25352 --- [ApplicationService] [           main] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2026-09-17T22:04:19.096+05:30  INFO 25352 --- [ApplicationService] [           main] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1789662859094 with initial instances count: 2
+2026-09-17T22:04:19.103+05:30  INFO 25352 --- [ApplicationService] [           main] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application APPLICATIONSERVICE with eureka with status UP
+2026-09-17T22:04:19.103+05:30  INFO 25352 --- [ApplicationService] [           main] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1789662859103, current=UP, previous=STARTING]
+2026-09-17T22:04:19.108+05:30  INFO 25352 --- [ApplicationService] [foReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_APPLICATIONSERVICE/Tikesh:ApplicationService:8083: registering service...
+2026-09-17T22:04:19.146+05:30  INFO 25352 --- [ApplicationService] [           main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8083 (http) with context path '/'
+2026-09-17T22:04:19.146+05:30  INFO 25352 --- [ApplicationService] [           main] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8083
+2026-09-17T22:04:19.177+05:30  INFO 25352 --- [ApplicationService] [foReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_APPLICATIONSERVICE/Tikesh:ApplicationService:8083 - registration status: 204
+2026-09-17T22:04:19.306+05:30  INFO 25352 --- [ApplicationService] [           main] c.e.A.ApplicationServiceApplication      : Started ApplicationServiceApplication in 12.995 seconds (process running for 14.071)
+2026-09-17T22:09:18.327+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-17T22:14:18.349+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-17T22:19:18.353+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-17T22:24:18.368+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-17T22:29:18.377+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-17T22:34:18.390+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-17T22:39:18.395+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-17T22:44:18.410+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-17T22:49:18.422+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-17T22:54:18.437+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-17T22:59:18.440+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-17T23:04:18.442+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-18T16:26:11.756+05:30  WARN 25352 --- [ApplicationService] [l-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=17h17m56s835ms206µs900ns).
+2026-09-18T16:26:42.193+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-18T16:31:42.225+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-18T16:36:42.250+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-18T16:41:42.267+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-18T16:46:42.279+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-18T16:51:42.297+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-18T16:56:42.302+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-18T17:01:42.328+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-18T17:06:42.331+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-18T18:03:35.040+05:30  WARN 25352 --- [ApplicationService] [l-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=52m21s227ms489µs500ns).
+2026-09-18T18:03:51.298+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-18T18:08:51.322+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-18T18:13:51.363+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-18T18:18:51.390+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-18T18:23:51.411+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-18T18:28:51.426+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-18T18:33:51.452+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-18T18:38:51.494+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-19T09:59:50.831+05:30  WARN 25352 --- [ApplicationService] [l-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=15h20m42s946ms949µs600ns).
+2026-09-19T10:04:28.544+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-19T10:09:28.614+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-19T10:14:28.628+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-19T10:19:28.639+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-19T10:24:28.657+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-19T10:29:28.684+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-19T10:34:28.710+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-19T10:39:28.752+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-19T10:44:28.762+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-19T10:49:28.780+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-19T10:54:28.800+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-19T10:59:28.816+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-19T11:04:29.509+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-19T12:56:06.273+05:30  WARN 25352 --- [ApplicationService] [l-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h48m11s556ms315µs800ns).
+2026-09-19T13:17:57.148+05:30  WARN 25352 --- [ApplicationService] [l-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=21m54s171ms145µs900ns).
+2026-09-19T13:18:35.919+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-19T13:23:35.928+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-19T13:28:35.947+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-19T13:33:35.952+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-19T14:13:18.786+05:30  WARN 25352 --- [ApplicationService] [l-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=36m51s357ms164µs200ns).
+2026-09-19T14:15:02.236+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-19T14:20:02.279+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-19T14:25:02.312+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-19T14:30:02.327+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-19T14:35:02.355+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-19T14:40:02.372+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-19T14:45:02.399+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-19T14:50:02.436+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-19T14:55:02.470+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-19T15:00:02.489+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-19T15:05:02.529+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-19T15:10:02.576+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-19T17:19:04.825+05:30  WARN 25352 --- [ApplicationService] [l-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=2h6m15s247ms740µs300ns).
+2026-09-19T22:01:41.856+05:30  WARN 25352 --- [ApplicationService] [l-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=4h42m37s34ms142µs500ns).
+2026-09-19T22:03:07.048+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-19T22:08:07.058+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-19T22:13:07.060+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-19T22:18:07.074+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-19T22:23:07.151+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-19T22:28:07.161+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-19T22:33:07.179+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-19T22:38:07.200+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-19T22:43:07.245+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-19T22:48:07.315+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-19T22:53:07.362+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-19T22:58:07.378+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-19T23:03:07.382+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-19T23:08:07.388+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-19T23:13:07.400+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-19T23:18:07.408+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-19T23:23:07.446+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-19T23:28:07.457+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-19T23:33:07.468+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-19T23:38:07.481+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-19T23:43:07.497+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-19T23:48:07.508+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-19T23:53:07.525+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-19T23:58:07.540+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-20T00:03:07.554+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-20T00:08:07.601+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-20T00:13:07.618+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-20T00:18:07.633+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-20T00:23:07.658+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-20T00:28:07.668+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-20T00:33:07.680+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-20T00:38:07.698+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-20T00:43:07.714+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-20T01:03:49.174+05:30  WARN 25352 --- [ApplicationService] [l-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=18m4s26ms931µs300ns).
+2026-09-20T21:31:58.047+05:30  WARN 25352 --- [ApplicationService] [l-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=20h28m12s502ms293µs500ns).
+2026-09-20T21:33:26.271+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-20T21:38:26.601+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-20T21:43:26.664+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-20T21:48:26.671+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-20T21:53:26.673+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-20T21:58:26.677+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-20T22:03:26.687+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-20T22:08:26.704+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-20T22:13:26.743+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-20T22:18:26.796+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-20T22:23:26.807+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-20T22:28:26.824+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-20T22:33:26.856+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-20T22:38:26.865+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-20T22:43:26.870+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-20T22:48:26.879+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-20T22:53:26.881+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-20T22:58:29.415+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-20T23:03:29.429+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-20T23:08:29.435+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-20T23:13:29.437+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-20T23:18:29.443+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-20T23:23:29.460+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-20T23:28:29.468+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-20T23:33:29.470+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-20T23:38:29.481+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-20T23:43:29.524+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-21T01:40:34.845+05:30  WARN 25352 --- [ApplicationService] [l-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h52m58s214ms800µs900ns).
+2026-09-21T10:33:42.283+05:30  WARN 25352 --- [ApplicationService] [l-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=8h53m10s652ms952µs900ns).
+2026-09-21T10:34:05.720+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-21T10:39:05.810+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-21T10:44:05.852+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-21T10:49:05.895+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-21T10:56:59.029+05:30  WARN 25352 --- [ApplicationService] [l-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=5m46s468ms133µs500ns).
+2026-09-21T20:11:43.185+05:30  WARN 25352 --- [ApplicationService] [l-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=9h14m47s324ms325µs).
+2026-09-21T20:14:10.291+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-21T20:19:20.434+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-21T20:24:20.469+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-21T20:29:20.494+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-21T20:34:20.524+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-21T20:38:48.960+05:30  WARN 25352 --- [ApplicationService] [coveryClient-%d] c.netflix.discovery.TimedSupervisorTask  : task supervisor timed out
+
+java.util.concurrent.TimeoutException
+	at java.base/java.util.concurrent.FutureTask.get(FutureTask.java:204) ~[na:na]
+	at com.netflix.discovery.TimedSupervisorTask.run(TimedSupervisorTask.java:65) ~[eureka-client-2.0.6.jar!/:2.0.6]
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:577) ~[na:na]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317) ~[na:na]
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642) ~[na:na]
+	at java.base/java.lang.Thread.run(Thread.java:1589) ~[na:na]
+
+2026-09-21T20:38:48.960+05:30  WARN 25352 --- [ApplicationService] [coveryClient-%d] c.netflix.discovery.TimedSupervisorTask  : task supervisor timed out
+
+java.util.concurrent.TimeoutException
+	at java.base/java.util.concurrent.FutureTask.get(FutureTask.java:204) ~[na:na]
+	at com.netflix.discovery.TimedSupervisorTask.run(TimedSupervisorTask.java:65) ~[eureka-client-2.0.6.jar!/:2.0.6]
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:577) ~[na:na]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317) ~[na:na]
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642) ~[na:na]
+	at java.base/java.lang.Thread.run(Thread.java:1589) ~[na:na]
+
+2026-09-21T20:39:20.540+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-21T20:44:20.577+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-21T20:49:20.850+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-21T20:54:21.026+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-21T20:59:21.046+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-21T21:04:21.059+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-21T21:09:21.063+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-21T21:14:21.075+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-21T21:19:21.091+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-21T21:39:48.089+05:30  WARN 25352 --- [ApplicationService] [l-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=17m58s550ms412µs600ns).
+2026-09-21T22:46:13.181+05:30  WARN 25352 --- [ApplicationService] [l-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h6m25s88ms17µs800ns).
+2026-09-21T22:47:59.970+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-21T22:53:00.046+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-21T22:58:00.083+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-22T08:48:46.536+05:30  WARN 25352 --- [ApplicationService] [l-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=9h49m2s280ms397µs599ns).
+2026-09-22T08:51:36.158+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-22T08:56:36.243+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-22T09:01:36.300+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-22T09:06:40.026+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-22T10:03:11.705+05:30  WARN 25352 --- [ApplicationService] [l-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=54m50s693ms543µs999ns).
+2026-09-22T10:06:04.825+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-22T10:11:04.916+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-22T10:16:04.976+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-22T10:21:05.015+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-22T10:26:05.037+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-22T19:20:58.854+05:30  WARN 25352 --- [ApplicationService] [l-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=8h52m19s958ms649µs700ns).
+2026-09-22T19:22:51.603+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-22T19:27:52.620+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-22T19:32:52.678+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-22T19:37:52.700+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-22T19:42:52.712+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-22T19:47:52.726+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-22T19:52:52.742+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-22T19:57:52.749+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-22T20:02:52.775+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-22T20:07:52.800+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-22T20:12:52.810+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-22T20:17:52.825+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-22T20:22:57.964+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-22T20:27:58.123+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-22T20:32:58.132+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-22T20:37:58.142+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-22T20:42:58.157+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-22T20:47:58.174+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-22T20:52:58.189+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-22T20:57:58.212+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-22T21:02:58.252+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-22T21:07:58.990+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-22T21:12:59.038+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-22T21:18:00.651+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-22T21:23:10.560+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-22T21:28:10.688+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-22T21:33:10.747+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-22T21:38:10.786+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-22T21:43:10.864+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-22T21:48:10.883+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-22T21:53:10.926+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-22T21:58:10.954+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-22T22:03:10.989+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-22T22:08:11.008+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-22T22:13:11.046+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-22T22:18:11.059+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-22T22:23:11.074+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-22T22:28:11.104+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-22T22:33:11.161+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-22T22:38:11.229+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-22T22:43:11.231+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-22T22:48:11.246+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-22T22:53:11.286+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-22T22:58:11.342+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-22T23:03:11.386+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-22T23:08:11.414+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-22T23:13:12.601+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-22T23:20:06.768+05:30  WARN 25352 --- [ApplicationService] [l-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=4m2s311ms966µs200ns).
+2026-09-22T23:22:08.229+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-22T23:27:08.288+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-22T23:32:08.332+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-22T23:37:08.346+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-22T23:42:08.354+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-22T23:47:08.372+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-22T23:52:08.422+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-22T23:57:08.435+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-23T00:02:08.448+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-23T10:04:15.583+05:30  WARN 25352 --- [ApplicationService] [l-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=10h1m7s717ms389µs600ns).
+2026-09-23T10:07:49.827+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-23T10:12:49.903+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-23T10:17:49.950+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-23T10:22:49.995+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-23T10:27:50.035+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-23T10:32:50.093+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-23T10:37:50.162+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-23T10:42:50.216+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-23T10:47:50.256+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-23T10:52:50.310+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-23T10:57:50.345+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-23T11:02:50.353+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-23T11:07:50.396+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-23T11:12:50.499+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-23T11:17:50.542+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-23T11:22:50.583+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-23T11:27:50.609+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-23T11:32:50.635+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-23T11:37:50.685+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-23T11:42:50.725+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-23T11:47:50.772+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-23T11:52:50.795+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-23T11:57:50.836+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-23T12:02:50.882+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-23T12:07:51.719+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-23T12:31:46.706+05:30  WARN 25352 --- [ApplicationService] [l-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=23m56s605ms89µs700ns).
+2026-09-23T13:16:59.373+05:30  WARN 25352 --- [ApplicationService] [l-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=45m12s670ms939µs200ns).
+2026-09-23T13:21:00.971+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-23T13:30:31.704+05:30  WARN 25352 --- [ApplicationService] [l-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=6m32s227ms533µs).
+2026-09-23T13:32:07.747+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-23T13:37:07.764+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-23T13:42:07.786+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-23T13:47:07.837+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-23T13:52:07.877+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-23T13:57:07.913+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-23T14:02:07.918+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-23T14:27:05.250+05:30  WARN 25352 --- [ApplicationService] [l-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=24m1s702ms631µs500ns).
+2026-09-23T14:31:04.772+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-23T17:11:27.106+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-23T17:11:31.737+05:30  WARN 25352 --- [ApplicationService] [l-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=2h35m55s578ms120µs400ns).
+2026-09-23T17:16:27.130+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-23T17:21:27.204+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-23T17:26:27.206+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-23T17:31:27.221+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-23T17:36:27.226+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-23T17:41:27.242+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-23T17:46:27.256+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-23T17:51:27.266+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-23T17:56:27.280+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-23T18:01:27.292+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-23T18:06:27.304+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-23T18:11:27.308+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-23T18:16:27.322+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-23T18:21:27.345+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-23T18:26:27.355+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-23T18:31:27.357+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-23T18:36:27.371+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-23T18:41:27.375+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-23T18:46:27.389+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-23T18:51:27.401+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-23T18:56:27.421+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-23T19:01:27.423+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-23T19:06:27.434+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-23T19:11:27.442+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-23T19:16:27.450+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-23T19:21:27.461+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-23T19:26:27.518+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-23T19:31:27.561+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-23T19:36:27.571+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-23T19:41:27.621+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-23T19:46:27.660+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-23T19:51:27.670+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-23T19:56:27.687+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-23T20:01:27.763+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-23T20:06:27.806+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-23T20:11:27.845+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-23T20:16:27.887+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-23T20:21:27.903+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-23T20:26:27.936+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-23T20:31:27.977+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-23T20:36:28.013+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-23T20:41:28.020+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-23T20:46:28.072+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-23T20:51:28.112+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-23T20:56:28.174+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-23T21:01:28.225+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-23T21:52:57.264+05:30  WARN 25352 --- [ApplicationService] [l-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=50m48s977ms664µs400ns).
+2026-09-23T22:01:12.975+05:30  WARN 25352 --- [ApplicationService] [onnection-adder] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Pool is empty, failed to create/setup connection (6620ab60-811e-4aa8-8185-2a124b16f9fb)
+
+com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at com.mysql.cj.jdbc.exceptions.SQLError.createCommunicationsException(SQLError.java:165) ~[mysql-connector-j-9.7.0.jar!/:9.7.0]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:55) ~[mysql-connector-j-9.7.0.jar!/:9.7.0]
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:840) ~[mysql-connector-j-9.7.0.jar!/:9.7.0]
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:416) ~[mysql-connector-j-9.7.0.jar!/:9.7.0]
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:237) ~[mysql-connector-j-9.7.0.jar!/:9.7.0]
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:180) ~[mysql-connector-j-9.7.0.jar!/:9.7.0]
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:144) ~[HikariCP-7.0.2.jar!/:na]
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:373) ~[HikariCP-7.0.2.jar!/:na]
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:210) ~[HikariCP-7.0.2.jar!/:na]
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:488) ~[HikariCP-7.0.2.jar!/:na]
+	at com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:752) ~[HikariCP-7.0.2.jar!/:na]
+	at com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:731) ~[HikariCP-7.0.2.jar!/:na]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642) ~[na:na]
+	at java.base/java.lang.Thread.run(Thread.java:1589) ~[na:na]
+Caused by: com.mysql.cj.exceptions.CJCommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:67) ~[na:na]
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500) ~[na:na]
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:484) ~[na:na]
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:52) ~[mysql-connector-j-9.7.0.jar!/:9.7.0]
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:95) ~[mysql-connector-j-9.7.0.jar!/:9.7.0]
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:140) ~[mysql-connector-j-9.7.0.jar!/:9.7.0]
+	at com.mysql.cj.exceptions.ExceptionFactory.createCommunicationsException(ExceptionFactory.java:156) ~[mysql-connector-j-9.7.0.jar!/:9.7.0]
+	at com.mysql.cj.protocol.a.NativeProtocol.negotiateSSLConnection(NativeProtocol.java:365) ~[mysql-connector-j-9.7.0.jar!/:9.7.0]
+	at com.mysql.cj.protocol.a.NativeAuthenticationProvider.connect(NativeAuthenticationProvider.java:199) ~[mysql-connector-j-9.7.0.jar!/:9.7.0]
+	at com.mysql.cj.protocol.a.NativeProtocol.connect(NativeProtocol.java:1334) ~[mysql-connector-j-9.7.0.jar!/:9.7.0]
+	at com.mysql.cj.NativeSession.connect(NativeSession.java:155) ~[mysql-connector-j-9.7.0.jar!/:9.7.0]
+	at com.mysql.cj.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:964) ~[mysql-connector-j-9.7.0.jar!/:9.7.0]
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:828) ~[mysql-connector-j-9.7.0.jar!/:9.7.0]
+	... 13 common frames omitted
+Caused by: java.net.SocketException: An established connection was aborted by the software in your host machine
+	at java.base/sun.nio.ch.NioSocketImpl.implRead(NioSocketImpl.java:315) ~[na:na]
+	at java.base/sun.nio.ch.NioSocketImpl.read(NioSocketImpl.java:340) ~[na:na]
+	at java.base/sun.nio.ch.NioSocketImpl$1.read(NioSocketImpl.java:789) ~[na:na]
+	at java.base/java.net.Socket$SocketInputStream.read(Socket.java:1025) ~[na:na]
+	at java.base/sun.security.ssl.SSLSocketInputRecord.read(SSLSocketInputRecord.java:477) ~[na:na]
+	at java.base/sun.security.ssl.SSLSocketInputRecord.readHeader(SSLSocketInputRecord.java:471) ~[na:na]
+	at java.base/sun.security.ssl.SSLSocketInputRecord.decode(SSLSocketInputRecord.java:160) ~[na:na]
+	at java.base/sun.security.ssl.SSLTransport.decode(SSLTransport.java:111) ~[na:na]
+	at java.base/sun.security.ssl.SSLSocketImpl.decode(SSLSocketImpl.java:1510) ~[na:na]
+	at java.base/sun.security.ssl.SSLSocketImpl.readHandshakeRecord(SSLSocketImpl.java:1425) ~[na:na]
+	at java.base/sun.security.ssl.SSLSocketImpl.startHandshake(SSLSocketImpl.java:455) ~[na:na]
+	at java.base/sun.security.ssl.SSLSocketImpl.startHandshake(SSLSocketImpl.java:426) ~[na:na]
+	at com.mysql.cj.protocol.ExportControlled.performTlsHandshake(ExportControlled.java:208) ~[mysql-connector-j-9.7.0.jar!/:9.7.0]
+	at com.mysql.cj.protocol.StandardSocketFactory.performTlsHandshake(StandardSocketFactory.java:183) ~[mysql-connector-j-9.7.0.jar!/:9.7.0]
+	at com.mysql.cj.protocol.a.NativeSocketConnection.performTlsHandshake(NativeSocketConnection.java:91) ~[mysql-connector-j-9.7.0.jar!/:9.7.0]
+	at com.mysql.cj.protocol.a.NativeProtocol.negotiateSSLConnection(NativeProtocol.java:356) ~[mysql-connector-j-9.7.0.jar!/:9.7.0]
+	... 18 common frames omitted
+
+2026-09-23T22:01:43.334+05:30  WARN 25352 --- [ApplicationService] [l-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=8m46s113ms135µs).
+2026-09-23T22:05:12.164+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-23T22:10:12.176+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-23T22:15:12.209+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-23T22:20:12.259+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-23T22:25:12.298+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-23T22:30:12.310+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-23T22:33:33.173+05:30  WARN 25352 --- [ApplicationService] [l-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=2m19s253ms18µs300ns).
+2026-09-23T22:37:01.567+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-23T22:42:09.117+05:30  WARN 25352 --- [ApplicationService] [l-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=3m35s867ms760µs300ns).
+2026-09-23T22:45:20.437+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-23T22:50:20.505+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-23T23:08:40.281+05:30  WARN 25352 --- [ApplicationService] [l-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=14m30s985ms670µs300ns).
+2026-09-23T23:09:23.408+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-23T23:14:23.434+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-23T23:19:23.463+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-23T23:24:23.472+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-23T23:29:23.486+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-23T23:34:23.499+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-23T23:39:23.508+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-23T23:44:23.520+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-23T23:49:23.524+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-23T23:54:23.538+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-23T23:59:23.730+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-24T00:04:23.733+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-24T00:09:23.746+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-24T00:14:23.760+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-24T00:19:23.764+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-24T00:24:23.767+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-24T00:29:23.769+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-24T00:34:23.787+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-24T00:39:23.799+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-24T00:44:23.802+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-24T00:49:23.805+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-24T00:54:23.823+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-24T00:59:23.862+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-24T01:04:23.869+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-24T01:09:23.874+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-24T01:14:23.878+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-24T01:19:23.880+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-24T01:24:23.888+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-24T01:29:23.904+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-24T01:34:23.908+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-24T08:49:17.837+05:30  WARN 25352 --- [ApplicationService] [l-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=7h11m7s791ms130µs900ns).
+2026-09-24T08:50:04.497+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-24T09:09:25.719+05:30  WARN 25352 --- [ApplicationService] [l-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=17m36s733ms401µs500ns).
+2026-09-24T09:12:22.620+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-24T09:17:22.630+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-24T09:22:22.640+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-24T09:27:22.651+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-24T09:32:22.657+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-24T09:37:22.673+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-24T09:42:22.676+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-24T09:47:22.677+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-24T09:52:22.689+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-24T09:57:22.695+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-24T10:02:22.703+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-24T10:07:22.709+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-24T10:12:22.719+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-24T10:17:22.732+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-24T10:22:22.740+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-24T10:27:22.749+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-24T10:32:22.751+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-24T10:37:22.752+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-24T10:42:22.754+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-24T10:47:22.765+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-24T10:52:22.781+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-24T10:57:22.798+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-24T11:02:22.804+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-24T12:08:52.475+05:30  WARN 25352 --- [ApplicationService] [l-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h3m54s901ms594µs900ns).
+2026-09-24T12:10:59.034+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-24T12:15:59.138+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-24T12:20:59.146+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-24T12:25:59.150+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-24T12:30:59.155+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-24T12:35:59.158+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-24T12:40:59.176+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-24T12:45:59.178+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-24T12:52:12.607+05:30  WARN 25352 --- [ApplicationService] [l-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m48s703ms267µs100ns).
+2026-09-24T13:02:07.551+05:30  WARN 25352 --- [ApplicationService] [l-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=9m54s946ms709µs700ns).
+2026-09-24T13:02:08.688+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-24T13:07:08.703+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-24T13:12:53.451+05:30  WARN 25352 --- [ApplicationService] [l-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=3m45s763ms709µs100ns).
+2026-09-24T13:15:37.658+05:30  WARN 25352 --- [ApplicationService] [l-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=2m14s197ms642µs400ns).
+2026-09-24T13:17:28.689+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-24T13:22:28.694+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-24T13:27:28.716+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-24T13:32:28.759+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-24T13:37:28.797+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-24T21:41:02.756+05:30  WARN 25352 --- [ApplicationService] [l-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=8h27s850ms273µs700ns).
+2026-09-24T21:42:23.178+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-24T21:47:23.661+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-24T21:52:23.686+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-24T21:57:23.697+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-24T22:02:23.709+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-24T22:07:23.716+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-24T22:12:23.752+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-24T22:17:23.759+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-24T22:22:23.760+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-24T22:27:23.765+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-24T22:32:23.774+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-24T22:37:23.780+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-24T22:42:23.785+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-24T22:47:23.799+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-24T22:52:23.805+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-24T22:57:24.157+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-24T23:02:24.160+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-24T23:07:24.209+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-24T23:12:24.226+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-24T23:17:24.279+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-24T23:22:24.286+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-24T23:27:24.298+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-24T23:32:24.318+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-24T23:37:24.363+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-24T23:42:24.375+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-24T23:47:24.389+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-24T23:52:24.398+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-24T23:57:24.411+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-25T00:02:24.424+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-25T00:07:24.435+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-25T00:10:15.150+05:30  WARN 25352 --- [ApplicationService] [l-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=2m39s310ms921µs500ns).
+2026-09-25T10:18:09.728+05:30  WARN 25352 --- [ApplicationService] [l-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=10h7m57s882ms757µs700ns).
+2026-09-25T10:22:09.683+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-25T10:27:10.624+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-25T10:32:14.925+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-25T10:37:14.937+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-25T10:42:14.954+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-25T10:47:14.996+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-25T10:52:15.007+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-25T10:57:15.029+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-25T11:02:15.584+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-25T11:07:19.454+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-25T11:12:19.734+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-25T11:17:20.127+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-25T11:22:20.217+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-25T11:27:20.285+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-25T11:32:20.329+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-25T11:37:20.387+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-25T11:42:20.439+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-25T11:47:20.484+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-25T11:52:20.528+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-25T11:57:20.546+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-25T12:02:20.583+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-25T12:07:20.592+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-25T12:12:20.608+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-25T12:17:20.632+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-25T12:22:20.641+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-25T12:27:20.654+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-25T12:32:20.661+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-25T12:37:20.663+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-25T12:42:20.671+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-25T12:47:20.679+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-25T12:52:20.691+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-25T12:57:20.711+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-25T13:02:20.725+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-25T13:07:20.731+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-25T13:12:20.743+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-25T13:17:23.513+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-25T13:22:24.028+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-25T13:27:24.097+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-25T13:32:24.162+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-25T13:37:24.182+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-25T13:42:24.216+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-25T13:47:24.252+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-25T13:52:24.318+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-25T13:57:24.340+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-25T14:02:24.356+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-25T14:07:24.434+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-25T14:12:24.460+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-25T14:17:24.490+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-25T14:22:24.572+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-25T14:27:24.606+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-25T14:32:24.646+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-25T14:37:24.690+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-25T14:42:24.720+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-25T14:47:24.762+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-25T14:52:24.813+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-25T14:57:24.835+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-25T15:02:24.890+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-25T15:07:24.936+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-25T15:12:24.970+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-25T15:17:24.973+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-25T15:22:24.988+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-25T15:27:24.995+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-25T15:32:25.025+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-25T15:37:25.027+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-25T15:42:25.043+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-25T15:47:25.046+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-25T15:52:25.054+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-25T15:57:25.058+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-25T16:02:25.064+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-25T16:07:25.074+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-25T16:12:25.090+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-25T16:17:25.141+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-25T16:22:25.171+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-25T16:27:25.181+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-25T16:32:25.197+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-25T16:37:25.204+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-25T16:42:25.216+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-25T16:47:25.238+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-25T16:52:25.246+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-25T17:18:31.306+05:30  WARN 25352 --- [ApplicationService] [l-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=23m44s323ms414µs100ns).
+2026-09-26T11:41:14.658+05:30  WARN 25352 --- [ApplicationService] [l-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=18h22m45s175ms596µs500ns).
+2026-09-26T11:43:02.368+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-26T11:48:02.505+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-26T11:53:02.588+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-26T11:58:02.654+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-26T12:03:02.690+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-26T12:08:02.734+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-26T12:13:02.753+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-26T12:18:02.784+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-26T12:23:02.791+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-26T12:28:02.813+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-26T12:33:02.850+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-26T12:38:02.854+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-26T12:43:02.864+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-26T12:48:02.892+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-26T12:53:02.909+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-26T20:28:14.329+05:30  WARN 25352 --- [ApplicationService] [l-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=7h35m317ms229µs500ns).
+2026-09-26T20:32:31.274+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-26T20:37:31.340+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-26T20:42:31.359+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-26T20:47:31.418+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-26T20:52:31.434+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-26T20:57:43.090+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-26T21:02:45.073+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-26T21:05:37.011+05:30  WARN 25352 --- [ApplicationService] [l-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=2m14s220ms171µs700ns).
+2026-09-26T21:09:32.503+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-26T23:04:11.038+05:30  WARN 25352 --- [ApplicationService] [l-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h54m2s692ms113µs800ns).
+2026-09-26T23:08:15.049+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-26T23:13:15.117+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-26T23:18:15.135+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-26T23:23:15.233+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-26T23:28:15.284+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-26T23:33:15.297+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-26T23:38:15.332+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-26T23:43:21.185+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-26T23:48:21.243+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-26T23:53:21.258+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-26T23:58:21.273+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-27T00:03:21.286+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-27T00:08:21.300+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-27T00:13:21.305+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-27T00:18:21.315+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-27T00:23:21.325+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-27T00:28:21.337+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-27T00:33:21.348+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-27T00:38:21.362+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-27T00:43:21.365+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-27T00:48:21.376+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-27T00:53:21.381+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-27T00:58:21.383+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-27T01:03:21.393+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-27T01:08:21.398+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-27T01:13:21.401+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-27T01:17:17.332+05:30  WARN 25352 --- [ApplicationService] [l-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=2m33s982ms123µs100ns).
+2026-09-27T10:26:38.064+05:30  WARN 25352 --- [ApplicationService] [l-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=9h9m21s840ms125µs700ns).
+2026-09-27T10:29:43.007+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-27T10:34:43.094+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-27T10:39:43.137+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-27T10:44:43.141+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-27T10:49:43.159+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-27T11:24:41.503+05:30  WARN 25352 --- [ApplicationService] [l-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=34m1s6ms164µs900ns).
+2026-09-27T13:49:14.638+05:30  WARN 25352 --- [ApplicationService] [l-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=2h24m36s623ms194µs400ns).
+2026-09-27T13:52:31.132+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-27T13:57:31.174+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-27T14:02:31.190+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-27T14:07:31.208+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-27T14:12:31.226+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-27T14:17:31.229+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-27T14:22:31.231+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-27T14:27:31.238+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-27T14:32:31.249+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-27T14:37:31.262+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-27T14:42:31.266+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-27T14:47:31.276+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-27T16:14:45.209+05:30  WARN 25352 --- [ApplicationService] [l-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h25m59s425ms846µs600ns).
+2026-09-28T12:20:06.362+05:30  WARN 25352 --- [ApplicationService] [l-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=20h5m24s172ms495µs800ns).
+2026-09-28T12:23:15.418+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-28T12:23:51.930+05:30  WARN 25352 --- [ApplicationService] [l-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=45s525ms103µs).
+2026-09-28T12:56:58.104+05:30  WARN 25352 --- [ApplicationService] [l-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=33m6s179ms924µs800ns).
+2026-09-28T13:01:40.908+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-28T13:06:41.023+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-28T13:11:41.063+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-28T13:16:41.069+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-28T13:21:41.074+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-28T13:26:41.092+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-28T13:31:41.115+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-28T13:36:41.242+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-28T13:40:46.247+05:30  WARN 25352 --- [ApplicationService] [l-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m15s120ms518µs300ns).
+2026-09-28T13:43:05.488+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-28T13:48:53.083+05:30  WARN 25352 --- [ApplicationService] [l-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m6s670ms551µs399ns).
+2026-09-28T13:48:54.154+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-28T13:53:54.167+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-28T14:14:19.672+05:30  WARN 25352 --- [ApplicationService] [l-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=19m56s519ms897µs501ns).
+2026-09-28T14:54:34.704+05:30  WARN 25352 --- [ApplicationService] [l-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=40m15s34ms508µs200ns).
+2026-09-28T14:58:12.050+05:30  WARN 25352 --- [ApplicationService] [l-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m37s314ms639µs200ns).
+2026-09-28T14:59:04.811+05:30  WARN 25352 --- [ApplicationService] [l-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=52s765ms463µs701ns).
+2026-09-28T14:59:46.201+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-28T15:04:46.217+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-28T15:09:46.232+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-28T15:14:46.261+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-28T15:25:06.463+05:30  WARN 25352 --- [ApplicationService] [l-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=7m3s947ms62µs700ns).
+2026-09-28T15:26:41.530+05:30  WARN 25352 --- [ApplicationService] [l-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m35s104ms130µs599ns).
+2026-09-28T19:22:05.517+05:30  WARN 25352 --- [ApplicationService] [l-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=3h55m26s788ms194µs601ns).
+2026-09-28T19:22:49.785+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-28T19:27:49.798+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-28T19:32:49.858+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-28T19:37:49.874+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-28T19:42:49.899+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-28T19:47:49.910+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-28T19:52:49.919+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-28T19:57:49.929+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-28T20:02:49.958+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-28T20:07:49.969+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-28T20:12:49.970+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-28T20:17:49.978+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-28T20:22:49.985+05:30  INFO 25352 --- [ApplicationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
